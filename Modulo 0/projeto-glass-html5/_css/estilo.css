@@ -1,33 +1,82 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+@font-face {
+    font-family: 'FonteLogo';
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+:root {
+    /* Cores */
+    --cor00: #ffffff;
+    --cor01: #000000;
+    --cor02: #ff6060;
+    --cor03: #ff0000;
+    --cor04: #720000;
+    --cor05: #e0d1be;
+    --cor06: #888888;
+    --cor07: #606060;
+    --cor08: #00000066; 
+    --cor09: #00000099;
+    /* Fontes */
+    --fonte-padra: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-titulo: 'FonteLogo', sans-serif;
+    --fonte-subtitulo: 'Titillium Web', sans-serif;
+}
 body {
-    background-color: antiquewhite;
-    color: white; 
+    background-color: var(--cor05);
+    color: var(--cor01); 
+    font-family: var(--fonte-padra);
 }
 div#interface {
-    width: 900px;
-    background-color: red;
-    margin: -20px auto 10px auto;
-    padding: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    width: 1000px;
+    background-color: var(--cor00);
+    margin: -8px auto 10px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px var(--cor08);
 }
 p {
     text-align: justify; 
     text-indent: 50px;
 }
+a {
+    color: var(--cor03);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 header#cabecalho img#icone {
     position: absolute;
     left: 780px;
-    top: 40px;
+    top: 69px;
 }
 header#cabecalho {
-
+    border-bottom: 1px var(--cor07) solid;
+    height: 150px;
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 98px;
+}
+header#cabecalho h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 30pt;
+    color: var(--cor04);
+    text-shadow: 1px 1px 1px var(--cor09);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    padding-top: 20px;
+}
+header#cabecalho h2 {
+    font-family: var(--fonte-subtitulo);
+    color: var(--cor07);
+    font-size: 15pt;
+    padding: 0px;
+    margin-top: 0px;
 }
 /* Formatação das imagens com as legendas */
 figure.foto-legenda {
     position: relative;
-    border: 8px solid red;
-    box-shadow: 1px 1px 4px black;
+    border: 8px solid var(--cor00);
+    box-shadow: 1px 1px 4px var(--cor09);
 }
 figure.foto-legenda img {
     width: 100%;
@@ -37,7 +86,8 @@ figure.foto-legenda figcaption {
     opacity: 0;
     position: absolute;
     top: 0px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--cor08);
+    color: var(--cor00);
     width: 100%;
     height: 100%;
     padding: 10px;
@@ -55,26 +105,133 @@ nav#menu ul{
     list-style: none;
     text-transform: uppercase;
     position: absolute;
-    top: -20px;
+    top: -18px;
     left: 500px;
 }
 nav#menu li {
     display: inline-block;
-    background-color: rgb(114, 0, 0);
+    background-color: var(--cor03);
     padding: 10px;
     margin: 2px;
     transition: background-color 0.5s;
 }
 nav#menu li:hover {
-    background-color: rgb(255, 96, 96);
+    background-color: var(--cor02);
 }
 nav#menu h1 {
     display: none;
 }
 nav#menu a {
-    color: white;
+    color: var(--cor00);
     text-decoration: none;
 }
 nav#menu a:hover {
-    color: black;
+    color: var(--cor01);
+}
+section#corpo {
+    display: block;
+    width: 580px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    float: left;
+    border-right: 1px solid var(--cor07);
+}
+article#noticia-principal h2 {
+    font-size: 12pt;
+    background-color: var(--cor05);
+    color: var(--cor04);
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px;
+}
+header#cabecalho-artigo h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 20pt;
+    color: var(--cor04);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+header#cabecalho-artigo h2 {
+    font-size: 13pt;
+    color: var(--cor02);
+    background: none;
+    margin: 0px;
+}
+header#cabecalho-artigo h3 {
+    font-size: 12pt;
+    color: var(--cor04);
+}
+.direita {
+    text-align: right;
+}
+table#tabelaspec {
+    border: 1px solid var(--cor07);
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+table#tabelaspec td {
+    border: 1px solid var(--cor04);
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle  ;
+}
+table#tabelaspec td.ce {
+    color: var(--cor00);
+    background-color: var(--cor04);
+    border-bottom: 1px solid var(--cor05);
+}
+table#tabelaspec td.ceultima {
+    color: var(--cor00);
+    background-color: var(--cor04);
+}
+table#tabelaspec td.cd {
+    background-color: var(--cor02);
+    text-align: left;    
+}
+table#tabelaspec caption {
+    color: var(--cor04);
+    font-size: 15pt;
+    font-weight: bolder;
+}
+table#tabelaspec caption span {
+    display: block;
+    float: right;
+    font-size: 8pt;
+    color: var(--cor02);
+    margin-top: 7px;
+}
+aside#lateral {
+    display: block;
+    width: 380px;
+    float: right;
+    padding: 5px;
+    margin-top: 10px;
+    background: var(--cor05);
+    box-shadow: 1px 2px 3px var(--cor09);
+}
+aside#lateral h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 20pt;
+    color: var(--cor04);
+    padding: 15px 0px 5px 10px;
+    margin-top: 0px;
+}
+aside#lateral h2 {
+    font-size: 12pt;
+    background-color: var(--cor06);
+    color: var(--cor00);
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px;
+}
+footer#rodape {
+    clear: both;
+    display: block;
+    border-top: 1px solid var(--cor07);
+}
+aside#lateral p {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+footer#rodape p {
+    text-align: center;
 }
